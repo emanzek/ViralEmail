@@ -1,4 +1,4 @@
-<h1>**Viral Email**</h1>
+<h1>Viral Email</h1>
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
