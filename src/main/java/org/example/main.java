@@ -9,8 +9,6 @@ import javafx.stage.Stage;
  * This program will let you send your email into multiple address instantly using SMTP protocol.
  * For testing purpose, we'll be using this test account
  *
- * username: testaccountviralemail@yahoo.com *
- * password: swvqqdmrhtgkdqil *
  *
  * Since we're using smtp protocol, which means less secure, you need to lower the account's security
  * by creating an App Password from your account settings.
