@@ -90,7 +90,7 @@ Contributions are what make the open source community such an amazing place to b
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@emanzekk](https://twitter.com/emanzekk) - muhdaimanzaidi98@gmail.com
+Find me at here - [@emanzekk](https://twitter.com/emanzekk) - muhdaimanzaidi98@gmail.com
 
 Project Link: [https://github.com/emanzek/ViralEmail](https://github.com/emanzek/ViralEmail)
 

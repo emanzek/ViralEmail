@@ -34,7 +34,7 @@ public class ViewModel implements EventHandler<ActionEvent> {
         window.setTitle("Viral Email");
 
         //Select which screen to start first. Change to composeEmail to debug
-        window.setScene(loginScreen());
+        window.setScene(composeEmail());
     }
 
     private Scene loginScreen(){
@@ -212,11 +212,11 @@ public class ViewModel implements EventHandler<ActionEvent> {
             if (response != null){
                 //Extracting from txt file contains email address list
                 //This can be varied with diff type of file as long as extractor(new class file)
-                // could return "arg1,arg2,...,argn"
+                // could return "arg1,arg2,...,argN"
                 String filename = response.getAbsoluteFile().getAbsolutePath();
                 String format = filename.substring(filename.lastIndexOf("."),filename.length());
                 switch (format){
-                    case "txt":
+                    case ".txt":
                         try {
                             getList =  new extractTxt(filename);
                         } catch (Exception e) {
