@@ -14,7 +14,10 @@ import java.util.List;
 public class extractTxt {
     public String strRecipients;
 
-    public extractTxt(String filename){
+    public extractTxt(){
+        this.strRecipients = "";
+    }
+    public extractTxt(String filename) throws Exception{
         this.strRecipients = "";
         try {
             List list = readList(filename);

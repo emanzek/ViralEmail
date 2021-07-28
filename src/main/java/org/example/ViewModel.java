@@ -33,7 +33,7 @@ public class ViewModel implements EventHandler<ActionEvent> {
         this.filename = "";
         window.setTitle("Viral Email");
 
-        //Select which screen to start first
+        //Select which screen to start first. Change to composeEmail to debug
         window.setScene(loginScreen());
     }
 
@@ -185,10 +185,21 @@ public class ViewModel implements EventHandler<ActionEvent> {
         this.toInput.setText(input);
     }
 
+    private Alert showAlert(String msg) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information Dialog");
+        alert.setHeaderText(null);
+        alert.setContentText(msg);
+        alert.showAndWait();
+        alert.setContentText("");
+        return alert;
+    }
+
     @Override
     public void handle(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
         File response = fileChooser.showOpenDialog(null);
+        extractTxt getList = new extractTxt();
 
         if (event.getSource() == fileButton){
             //print out the path selected on below
@@ -203,7 +214,18 @@ public class ViewModel implements EventHandler<ActionEvent> {
                 //This can be varied with diff type of file as long as extractor(new class file)
                 // could return "arg1,arg2,...,argn"
                 String filename = response.getAbsoluteFile().getAbsolutePath();
-                extractTxt getList =  new extractTxt(filename);
+                String format = filename.substring(filename.lastIndexOf("."),filename.length());
+                switch (format){
+                    case "txt":
+                        try {
+                            getList =  new extractTxt(filename);
+                        } catch (Exception e) {
+                            showAlert("File unreadable!");
+                        }
+                        break;
+                    default:
+                        showAlert("Wrong file format!");
+                }
                 setRecipients(getList.strRecipients); //reassign the extracted value to recipient text field
             }
         }
